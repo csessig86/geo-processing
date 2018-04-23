@@ -14,8 +14,9 @@ We use a command line tool called [ogr2ogr](http://www.gdal.org/ogr2ogr.html), w
 
 ### 1. Getting census tracts within CD-27
 
-* We will start with a shapefile of all the [census tracts in Texas](https://www.census.gov/cgi-bin/geo/shapefiles/index.php?year=2017&layergroup=Census+Tracts): raw_data/tracts.shp
-* And a shapefile of [Congressional District 27](http://www.tlc.texas.gov/redist/data/data.html): raw_data/cd27.shp
+We will start with two shapefiles:
+* One of all the [census tracts in Texas](https://www.census.gov/cgi-bin/geo/shapefiles/index.php?year=2017&layergroup=Census+Tracts): raw_data/tracts.shp
+* And one of [Congressional District 27](http://www.tlc.texas.gov/redist/data/data.html): raw_data/cd27.shp
 
 We will then run a SQL query using ogr2ogr to find all of the census tracts within the shape of Congressional District 27. To do this, the command will go through each of Texas's census tracts; if it finds the geography of the tract is within the geography of CD-27, the script will add that tract to a new file. Otherwise, it will ignore. The resulting file will be only tracts within CD-27.
 
