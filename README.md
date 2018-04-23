@@ -15,19 +15,28 @@ We use a command line tool called [ogr2ogr](http://www.gdal.org/ogr2ogr.html), w
 ### 1. Getting census tracts within CD-27
 
 We will start with two shapefiles:
-* One of all the [census tracts in Texas](https://www.census.gov/cgi-bin/geo/shapefiles/index.php?year=2017&layergroup=Census+Tracts) (raw_data/tracts.shp)
-* And one of [Congressional District 27](http://www.tlc.texas.gov/redist/data/data.html) (raw_data/cd27.shp)
+* All the [census tracts](https://www.census.gov/cgi-bin/geo/shapefiles/index.php?year=2017&layergroup=Census+Tracts) in the state of Texas: raw_data/tracts.shp
+* The [shape](http://www.tlc.texas.gov/redist/data/data.html) of Congressional District 27: raw_data/cd27.shp
 
-We will then run a SQL query using ogr2ogr to find all of the census tracts within the shape of Congressional District 27. To do this, the command will go through each of Texas's census tracts; if it finds the geography of the tract is within the geography of CD-27, the script will add that tract to a new file. Otherwise, it will ignore. The resulting file will be only tracts within CD-27.
+We will run a SQL query using ogr2ogr to find all of the census tracts within the shape of Congressional District 27. To do this, the command will go through each of Texas's census tracts; if it finds the geography of the tract is within the geography of CD-27, the script will add that tract to a new file. Otherwise, it will ignore. The resulting file will be only tracts within CD-27.
+
+This file is exported into the edits directory.
 
 ### 2. Merge tracts with population data
 
-We'll then perform a [SQL join](https://www.w3schools.com/sql/sql_join.asp) to merge this file with a csv that has the percentage of Hispanic residents in each Texas census tract (raw_data/hispanic_population.csv). Both the shapefile we created of tracts within CD-27 and the csv of tract election results have a similar field of geoid, which will allow us to match the tracts and combine.
+We also have one csv for this analysis:
 
-The result is a shapefile of tracts within CD-27 that also has each tract's Hispanic population information.
+* The percentage of [Hispanic residents](https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml) in each Texas census tract: raw_data/hispanic_population.csv
+
+We will perform a [SQL join](https://www.w3schools.com/sql/sql_join.asp) to merge this csv with the exported shapefile from step 1. These files have a similar field of geoid, which will allow us to match the tracts from both datasets and merge.
+
+The result is a shapefile of tracts within CD-27, as well as each tract's Hispanic population.
+
+This file is exported into the edits directory.
 
 ### 3. Export
-We'll then export to a 
+
+The final step for us was to get this file into a format that we could use on an online map. We use a 
 
 
 
