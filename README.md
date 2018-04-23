@@ -6,7 +6,9 @@ For this example, we'll finding all the census tracts within Congressional Distr
 
 The analysis is contained within a bash file called:
 
+```
 process.sh
+```
 
 We use a command line tool called [ogr2ogr](http://www.gdal.org/ogr2ogr.html), which is great for doing all sorts of cool things with geography files like shapefiles. In this project, we will be using it to run SQL queries.
 
@@ -15,8 +17,8 @@ We will start with a shapefile of all the census tracts in Texas (raw_data/tract
 
 To do this, the command will go through each of Texas's census tracts; if it finds the geography of the tract is within the geography of CD-27, the script will add that tract to a new file. Otherwise, it will ignore. The resulting file will be only tracts within CD-27.
 
-### 2. Merge tracts with population data
 
+### 2. Merge tracts with population data
 We'll then perform a [SQL join](https://www.w3schools.com/sql/sql_join.asp) to merge this file with a csv that has the percentage of Hispanic residents in each Texas census tract (raw_data/hispanic_population.csv). Both the shapefile we created of tracts within CD-27 and the csv of tract election results have a similar field of geoid, which will allow us to match the tracts and combine.
 
 The result is a shapefile of tracts within CD-27 that also has each tract's Hispanic population information. We'll then export to a 
