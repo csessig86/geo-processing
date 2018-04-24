@@ -1,0 +1,12 @@
+<OGRVRTDataSource>
+
+<OGRVRTLayer name="cd27">
+<SrcDataSource>cd27.shp</SrcDataSource>
+</OGRVRTLayer>
+
+<OGRVRTLayer name="tracts">
+<SrcDataSource>tracts.shp</SrcDataSource>
+</OGRVRTLayer>
+
+</OGRVRTDataSource>
+

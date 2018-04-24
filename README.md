@@ -36,7 +36,7 @@ This file is exported into the edits directory.
 
 ### 3. Export
 
-The final step for us was to get this file into a format that we could use on an online map. We use a 
+The final step is to get this file into a format that we could use for an online map. One common filetype is geojson, which can be read using javascript. We will use ogr2ogr to convert our newly-created shapefile into a geojson file.
 
 
 
