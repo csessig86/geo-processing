@@ -13,7 +13,7 @@ cd raw_data
 ogr2ogr tracts_within_cd27.shp raw.vrt -dialect sqlite -sql "SELECT * FROM tracts, cd27 WHERE ST_Intersects(tracts.geometry, cd27.geometry)" tracts.shp
 
 
-# This is command for: 2. Merge tracts with population data
+# This is the command for: 2. Merge tracts with population data
 # The first parameter (tracts_hispanic_population.shp) is the file we're creating
 # The second parameter (tracts_within_cd27.shp) is the file we created in the previous command
 # The sql query joins this shapefile with the csv with the Hispanic population info:
