@@ -20,7 +20,7 @@ To install, run:
 npm install ogr2ogr
 ```
 
-If you're on a Mac, you can also get it installed when downloading QGIS from [KyngChaos](http://www.kyngchaos.com/software/frameworks). QGIS is a really nice program so definitely check it out.
+If you're on a Mac, you can also get it installed when downloading QGIS from [KyngChaos](http://www.kyngchaos.com/software/frameworks). QGIS is a really nice program for working with geographies so definitely check it out.
 
 ### 1. Getting census tracts within CD-27
 
