@@ -12,6 +12,16 @@ sh process.sh
 
 We use a command line tool called [ogr2ogr](http://www.gdal.org/ogr2ogr.html), which is great for doing all sorts of cool things with geography files like shapefiles. In this project, we will be using it to run SQL queries.
 
+### Installation
+
+To install, run:
+
+```
+npm install ogr2ogr
+```
+
+If you're on a Mac, you can also get it installed when downloading QGIS from [KyngChaos](http://www.kyngchaos.com/software/frameworks). QGIS is a really nice program so definitely check it out.
+
 ### 1. Getting census tracts within CD-27
 
 We will start with two shapefiles:
